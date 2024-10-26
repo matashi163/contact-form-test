@@ -6,11 +6,14 @@
 
 @section('content')
 <main>
-    <p class="thanks__text">お問い合わせありがとうございました</p>
-    <p class="thanks__background">Thank you</p>
-    <form action="/home" method="post" class="">
-        @csrf
-        <button class="home-button">HOME</button>
-    </form>
+    <div class="thanks__content">
+        <p class="thanks__text">お問い合わせありがとうございました</p>
+        <p class="thanks__background">Thank you</p>
+        <form action="/" method="post" class="home__form">
+            @csrf
+            <button class="form__button">HOME</button>
+        </form>
+    </div>
+    
 </main>
 @endsection
