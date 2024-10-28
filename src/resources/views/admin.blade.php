@@ -84,14 +84,23 @@
 </div>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('DOM fully loaded and parsed');
     const modal = document.getElementById('modal');
     const openModalButtons = document.querySelectorAll('.modal__open--button');
-    const closeModalButton = document.getElementById('.modal__close--button');
+    const closeModalButtons = document.querySelectorAll('.modal__close--button');
     openModalButtons.forEach(openModalButton => {
         openModalButton.addEventListener('click', () => {
             modal.style.display = 'flex';
         });
+    });
+    closeModalButtons.forEach(closeModalButton => {
+        closeModalButton.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+    });
+    window.addEventListener('click', (event) => {
+        if(event.target === modal){
+            modal.style.display = 'none';
+        }
     });
 });
 </script>
